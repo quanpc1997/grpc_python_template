@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package streaming;
+
+service Greeter {
+    // Server Streaming RPC
+    rpc StreamGreetings (GreetingRequest) returns (stream GreetingResponse);
+}
+
+message GreetingRequest {
+    string name = 1;
+}
+
+message GreetingResponse {
+    string message = 1;
+}
